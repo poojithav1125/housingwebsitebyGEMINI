@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream Homes</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Dream Homes</h1>
+        <nav>
+            <button onclick="openPage('home')">Home</button>
+            <button onclick="openPage('houses')">Houses</button>
+            <button onclick="openPage('contact')">Contact</button>
+        </nav>
+    </header>
+    <main>
+        <section id="home">
+            <h2>Welcome to Dream Homes</h2>
+            <p>Find your perfect home with us! We offer a variety of houses in desirable locations to suit your needs and budget.</p>
+            <button onclick="openPage('houses')">Explore Our Houses</button>
+        </section>
+
+        <section id="houses" style="display: none;">
+            <h2>Our Houses</h2>
+            <div class="house-grid">
+                <article>
+                    <img src="images/house1.jpg" alt="House 1">
+                    <h3>Modern Dream</h3>
+                    <p>This stunning modern house features 3 bedrooms, 2.5 bathrooms, and an open floor plan. Perfect for entertaining!</p>
+                    <ul>
+                        <li>3 Bedrooms</li>
+                        <li>2.5 Bathrooms</li>
+                        <li>Open Floor Plan</li>
+                        <li>Granite Countertops</li>
+                        <li>Stainless Steel Appliances</li>
+                    </ul>
+                    <a href="#">Learn More</a>
+                </article>
+
+                <article>
+                    <img src="images/house2.jpg" alt="House 2">
+                    <h3>Cozy Cottage</h3>
+                    <p>This charming cottage offers 2 bedrooms, 1 bathroom, and a cozy fireplace. Perfect for a starter home or a weekend getaway.</p>
+                    <ul>
+                        <li>2 Bedrooms</li>
+                        <li>1 Bathroom</li>
+                        <li>Fireplace</li>
+                        <li>Fenced Backyard</li>
+                        <li>Quiet Neighborhood</li>
+                    </ul>
+                    <a href="#">Learn More</a>
+                </article>
+
+                </div>
+        </section>
+
+        <section id="contact" style="display: none;">
+            <h2>Contact Us</h2>
+            <form id="contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Dream Homes. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function openPage(pageName) {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => section.style.display = 'none');
+            document.getElementById(pageName).style.display = 'block';
+        }
+
+        const form = document.getElementById('contact-form');
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            // Simulate form submission (replace with actual form submission logic)
+            alert('Your message has been sent!');
+        });
+    </script>
+</body>
+</html>
